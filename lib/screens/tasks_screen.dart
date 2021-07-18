@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/widgets/todo.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class TasksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
-        foregroundColor: Colors.lightBlueAccent,
+        foregroundColor: Colors.white,
         child: Icon(Icons.add),
         onPressed: () {  },),
       body: Column(
@@ -18,13 +19,18 @@ class TasksScreen extends StatelessWidget {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(child: Icon(Icons.list), backgroundColor: Colors.white, foregroundColor: Colors.lightBlueAccent,),
-                Text("I Love you Sina.", style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.w700),),
+                Text("aaaaaa", style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.w700),),
                 Text("12 tasks", style:TextStyle(color: Colors.white, fontSize: 18)),
               ],),
           ),
           Expanded(
-            child: Container(decoration: BoxDecoration(color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),),
+            child: Container(
+              decoration: BoxDecoration(color: Colors.white,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+              child: ListView(children: [
+                Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo(), Todo()
+              ],),
+            ),
           )],
       ),);
   }
